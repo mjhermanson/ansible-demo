@@ -3,6 +3,7 @@
   block:
     - name: Provision EC2 Windows Instance 
       community.aws.ec2_instance:
+        key_name: mhermans-key
         profile: "{{ aws_profile | default('') }}"
         state: present
         name: "{{ server_env }}-{{ short_desc }}-{{ server_os }}-{{ aws_user }}"
